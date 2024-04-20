@@ -1,0 +1,50 @@
+
+main {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Style pour les formulaires */
+form {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Styles pour les entrées de formulaire */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Couleur de bordure pour les champs de formulaire lorsque l'utilisateur les sélectionne */
+input:focus, textarea:focus {
+    border-color: #60a5fa;
+}
+
+/* Styles pour les boutons */
+button {
+    width: 128px;
+    height: 40px;
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* Styles pour les messages d'erreur */
+.error-message {
+    color: #dc2626;
+}
