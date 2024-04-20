@@ -1,12 +1,9 @@
 "use client";
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as zod from "zod";
 import './Contact.css'
-
 export default function Contact() {
-    // Définir le schéma de validation avec zod
     const schema = zod.object({
         name: zod.string().min(1, "Le nom est requis."),
         email: zod.string().email("Adresse e-mail invalide."),
@@ -14,15 +11,11 @@ export default function Contact() {
             .regex(/^\+261 \d{2} \d{3} \d{2}$/, "Numéro de téléphone invalide. Format attendu : +261 XX XXX XX"),
         message: zod.string().min(5, "Le message doit contenir au moins 5 caractères."),
     });
-
-    // Initialiser le formulaire avec react-hook-form et le validateur zod
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(schema),
     });
-
-    // Fonction de soumission du formulaire
     const onSubmit = (data) => {
-        // Les données du formulaire sont validées ici
+
         console.log("Données du formulaire validées :", data);
     };
 
@@ -97,5 +90,4 @@ export default function Contact() {
                 </div>
             </main>
         );
-        
 }
